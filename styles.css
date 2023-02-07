@@ -1,0 +1,50 @@
+#container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+}
+video {
+    background: rgba(66, 58, 58, 0.733) none repeat scroll 0 0;
+    border: 1px solid rgb(255, 255, 255);
+   width: auto;
+   border-radius: 10px;
+}
+.overlayWrapper {
+    position: relative;
+   
+}
+.overlayWrapper .overlay {
+    position:relative;
+    top: 0;
+    left: 5px;
+ 
+}
+p {
+    margin: 0.125em;
+}
+small {
+    font-size: smaller;
+}
+
+.dontdisplay{
+    display: none;
+}
+button{
+    background-color: rgb(3, 94, 230);
+     color: antiquewhite;
+     border: 1px solid grey;
+     padding: 6px 6px;
+     border-radius:6px;
+     margin-bottom: 20px;
+     cursor: pointer;
+}
+#controls{
+    cursor: pointer;
+}
+#record-section{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}

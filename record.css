@@ -1,0 +1,27 @@
+video {
+    width: 300px;
+    height: 200px;
+    border: 1px solid rgb(60, 174, 240);
+    border-radius: 7px;
+    backdrop-filter: 10px;
+    margin: 5px 5px;
+    
+    box-shadow: 3px 2px 20px rgba(52, 62, 70, 0.541);
+  }
+  .container{
+    display: flex;
+    flex-direction: row-reverse no-repeat ;
+    padding: 10px 10px;
+    width:100vh;
+    height: max-content;
+  }
+  button{
+    background-color: rgb(3, 94, 230);
+     color: antiquewhite;
+     border: 1px solid grey;
+     padding: 6px 6px;
+     border-radius:6px;
+     margin-bottom: 5px 5px;
+     cursor: pointer;
+     width: 50px
+}

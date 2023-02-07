@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recorded Video</title>
+    <script src="./record.js"></script>
+    <link rel="stylesheet" href="./record.css">
+</head>
+
+<body>
+  <div class="container">
+    <button onclick="history.back()">Back</button>
+ <a href=""></a>
+ <img src="" alt="">
+ <!-- <video id="video" src="" width="640" height="264" controls></video> -->
+ <script>
+  //////// Please select this path in browser for downloading records -----D:/Raspberrypi-Surveillance-cam/Records----
+ var xhr = new XMLHttpRequest();
+xhr.open("GET", "./Records", true);
+xhr.responseType = 'document';
+xhr.onload = () => {
+  if (xhr.status === 200) {
+    var elements = xhr.response.getElementsByTagName("a");
+    for (x of elements) {
+      if ( x.href.match(/\.(jpe?g|png|webm|mp4)$/)) { 
+          let video = document.createElement("video");
+          video.controls = true;
+          video.src = x.href;
+          document.body.appendChild(video);
+          video.innerHTML = document.lastModified
+
+          
+      } 
+    };
+  } 
+  else {
+    alert('Request failed. Returned status of ' + xhr.status);
+  }
+}
+xhr.send()
+
+
+
+
+</script>
+<!-- <script type="text/javascript">
+    function LastModUsingHeader(sFile) {
+    var X = !window.XMLHttpRequest ? new ActiveXObject('Microsoft.XMLHTTP') : new XMLHttpRequest;
+    X.open('GET', sFile, false);
+    try{ X.send();}
+    catch(y){}
+    var dtImage=new Date();
+    dtImage = X.getResponseHeader('Last-Modified');
+    return new Date(dtImage).toLocaleString();
+    }
+    document.getElementById('getImageDate').innerHTML=LastModUsingHeader('images/DCS-932L.jpg'); ;
+    Math.random();
+    setTimeout('(LastModUsingHeader(sFile))',10000); // refresh every 30 seconds
+    </script> -->
+</div>
+
+</body>
+
+</html>
